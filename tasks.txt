@@ -1,0 +1,26 @@
+1. vytvorit 6 hracu a k nim pridat penize z toho 5 botu kterym vytvorit logiku
+2. jedna hra v jedny funkci
+    2.1. vytvorit balik
+    2.2. zmichat karty
+    2.3. pozici pridelit kazdemu hraci
+    2.4. rozdat karty
+    2.5. vytvorit pot, do ktereho se hodi penize podle buttonu
+    2.6. faze hry, pre flop, flop, turn, river
+    2.7. 
+
+const cuts = (deckToCut) => {
+  let rgn;
+
+  do {
+    rgn = Math.random();
+  } while (rgn >= 0.14 && rgn <= 0.36);
+  const rnd1 = Math.floor(rgn * 100);
+  console.log("rnd1:", rnd1);
+
+  const chunk1 = deckToCut.slice(rnd1, deckToCut.length);
+  const chunk2 = deckToCut.slice(0, rnd1);
+  const deckFinal = [...chunk1, ...chunk2];
+  return deckFinal;
+};
+const deckFinal = cuts(shuffledDeck4);
+console.log("After cuts:", deckFinal);
